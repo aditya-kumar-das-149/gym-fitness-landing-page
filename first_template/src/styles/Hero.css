@@ -1,0 +1,167 @@
+.hero{
+    min-height:100vh;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to right,
+    rgba(0,0,0,.85),
+    rgba(0,0,0,.55));
+}
+
+.hero-container{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    z-index:2;
+    gap:60px;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.tag{
+    color:#FFB703;
+    letter-spacing:4px;
+    font-weight:700;
+}
+
+.hero-content h1{
+    font-size:78px;
+    line-height:1.05;
+    margin:25px 0;
+    font-weight:900;
+}
+
+.hero-content h1 span{
+    display:block;
+    color:#E63946;
+}
+
+.hero-content p{
+    font-size:19px;
+    line-height:1.9;
+    color:#ddd;
+    max-width:620px;
+}
+
+.hero-buttons{
+    margin-top:45px;
+    display:flex;
+    gap:20px;
+}
+
+.hero-buttons button{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.hero-stats{
+    display:flex;
+    gap:70px;
+    margin-top:70px;
+}
+
+.hero-stats h2{
+    color:#E63946;
+    font-size:42px;
+}
+
+.hero-stats span{
+    color:#bbb;
+}
+
+.trial-card{
+    width:340px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:20px;
+    padding:35px;
+}
+
+.trial-card h3{
+    font-size:32px;
+    margin-bottom:20px;
+    color:#FFB703;
+}
+
+.trial-card p{
+    color:#ddd;
+    line-height:1.8;
+}
+
+.trial-card button{
+    margin-top:30px;
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:50px;
+    background:#E63946;
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.trial-card button:hover{
+    transform:translateY(-4px);
+}
+
+@media(max-width:1100px){
+
+.hero-container{
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:60px;
+}
+
+.hero-content p{
+    margin:auto;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+.hero-stats{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:45px;
+}
+
+.hero-stats{
+    gap:30px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.trial-card{
+    width:100%;
+    max-width:380px;
+}
+
+}

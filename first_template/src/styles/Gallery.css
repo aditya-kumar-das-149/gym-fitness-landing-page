@@ -1,0 +1,519 @@
+/* ===========================================
+   Gallery Section
+=========================================== */
+
+.gallery {
+  position: relative;
+  padding: 120px 0;
+  background:
+    radial-gradient(circle at top left, rgba(255,102,0,.08), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(255,170,0,.06), transparent 40%),
+    #0b0b0b;
+    overflow: hidden;
+}
+
+.gallery .container {
+    text-align: center;
+}
+
+.gallery .section-tag{
+    display:inline-block;
+    color:#ff7a00;
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.gallery .section-title{
+    color:#fff;
+    font-size:clamp(2.2rem,5vw,3.6rem);
+    margin-bottom:20px;
+}
+
+.gallery-description{
+    max-width:760px;
+    margin: 0 auto 70px;
+    color:#b8b8b8;
+    line-height:1.8;
+    text-align:center;
+}
+
+/* ===========================================
+   Masonry Grid
+=========================================== */
+
+.gallery-grid{
+
+    columns:4 280px;
+    column-gap:22px;
+
+}
+
+.gallery-card{
+
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+    margin-bottom:22px;
+    break-inside:avoid;
+    cursor:pointer;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.03);
+
+    transition:.45s;
+
+}
+
+.gallery-card img{
+
+    width:100%;
+    display:block;
+    object-fit:cover;
+    transition:.7s ease;
+
+}
+
+.gallery-card.short img{
+
+    height:260px;
+
+}
+
+.gallery-card.medium img{
+
+    height:390px;
+
+}
+
+.gallery-card.tall img{
+
+    height:560px;
+
+}
+
+.gallery-card::before{
+
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.82),
+        rgba(0,0,0,.05)
+    );
+    opacity:0;
+    transition:.4s;
+    z-index:1;
+
+}
+
+.gallery-card:hover::before{
+
+    opacity:1;
+
+}
+
+.gallery-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* ===========================================
+   Overlay
+=========================================== */
+
+.gallery-overlay{
+
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+
+    padding:28px;
+    z-index:2;
+
+    opacity:0;
+    transform:translateY(30px);
+
+    transition:.45s;
+
+}
+
+.gallery-card:hover .gallery-overlay{
+
+    opacity:1;
+    transform:translateY(0);
+
+}
+
+.gallery-overlay span{
+
+    color:#ff8c32;
+    text-transform:uppercase;
+    font-size:.82rem;
+    letter-spacing:2px;
+    font-weight:700;
+
+}
+
+.gallery-overlay h3{
+
+    color:#fff;
+    margin-top:8px;
+    font-size:1.55rem;
+    font-weight:700;
+
+}
+
+.gallery-overlay button{
+
+    width:62px;
+    height:62px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #ff7a00,
+        #ffb100
+    );
+
+    color:#fff;
+
+    font-size:1.2rem;
+
+    cursor:pointer;
+
+    display:grid;
+    place-items:center;
+
+    transition:.35s;
+
+    box-shadow:
+    0 15px 35px rgba(255,122,0,.35);
+
+}
+
+.gallery-overlay button:hover{
+
+    transform:rotate(8deg) scale(1.08);
+
+}
+
+/* ===========================================
+   Lightbox
+=========================================== */
+
+.lightbox{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.94);
+
+    backdrop-filter:blur(12px);
+
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    padding:50px;
+
+}
+
+.lightbox img{
+
+    max-width:1100px;
+    width:100%;
+    max-height:78vh;
+
+    object-fit:contain;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+
+    0 30px 70px rgba(0,0,0,.45);
+
+}
+
+.lightbox-content{
+
+    margin-top:28px;
+    text-align:center;
+
+}
+
+.lightbox-content span{
+
+    color:#ff8b2d;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-weight:700;
+
+}
+
+.lightbox-content h3{
+
+    color:white;
+    margin-top:12px;
+    font-size:2rem;
+
+}
+
+.close-btn{
+
+    position:absolute;
+
+    top:30px;
+    right:30px;
+
+    width:56px;
+    height:56px;
+
+    border-radius:50%;
+    border:none;
+
+    cursor:pointer;
+
+    background:#ff7a00;
+    color:white;
+
+    font-size:1.2rem;
+
+    transition:.35s;
+
+}
+
+.close-btn:hover{
+
+    transform:rotate(90deg);
+
+}
+
+.nav-btn{
+
+    position:absolute;
+
+    top:50%;
+    transform:translateY(-50%);
+
+    width:62px;
+    height:62px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    backdrop-filter:blur(8px);
+
+    font-size:1.2rem;
+
+    transition:.35s;
+
+}
+
+.nav-btn:hover{
+
+    background:#ff7a00;
+    transform:translateY(-50%) scale(1.08);
+
+}
+
+.left{
+
+    left:40px;
+
+}
+
+.right{
+
+    right:40px;
+
+}
+
+/* ===========================================
+   Hover Glow
+=========================================== */
+
+.gallery-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    background:
+
+    radial-gradient(
+    circle,
+    rgba(255,122,0,.18),
+    transparent 70%
+    );
+
+    top:-100px;
+    right:-100px;
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+.gallery-card:hover::after{
+
+    opacity:1;
+
+}
+
+/* ===========================================
+   Responsive
+=========================================== */
+
+@media(max-width:1200px){
+
+.gallery-grid{
+
+columns:3 260px;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.gallery{
+
+padding:100px 0;
+
+}
+
+.gallery-grid{
+
+columns:2 250px;
+
+}
+
+.gallery-overlay h3{
+
+font-size:1.25rem;
+
+}
+
+.lightbox img{
+
+max-width:95%;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.gallery-grid{
+
+columns:1;
+
+}
+
+.gallery-card.short img,
+.gallery-card.medium img,
+.gallery-card.tall img{
+
+height:auto;
+
+}
+
+.gallery-overlay{
+
+padding:22px;
+
+}
+
+.nav-btn{
+
+width:50px;
+height:50px;
+
+}
+
+.left{
+
+left:15px;
+
+}
+
+.right{
+
+right:15px;
+
+}
+
+.close-btn{
+
+top:15px;
+right:15px;
+
+}
+
+.lightbox{
+
+padding:20px;
+
+}
+
+.lightbox-content h3{
+
+font-size:1.5rem;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.gallery{
+
+padding:80px 0;
+
+}
+
+.gallery-description{
+
+font-size:.95rem;
+
+}
+
+.gallery-overlay button{
+
+width:50px;
+height:50px;
+
+}
+
+.gallery-overlay h3{
+
+font-size:1.05rem;
+
+}
+
+}

@@ -1,0 +1,145 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: 0.35s ease;
+}
+
+.navbar.active {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #E63946;
+  font-weight: 700;
+}
+
+.logo svg {
+  font-size: 30px;
+}
+
+.logo h2 {
+  font-size: 28px;
+  color: #fff;
+}
+
+/* =========================
+   Desktop Navigation
+========================= */
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  position: relative;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #E63946;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #E63946;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   Join Button
+========================= */
+
+.primary-btn {
+  padding: 12px 28px;
+  background: #E63946;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  background: #ff4d5a;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Mobile Menu Button
+========================= */
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-btn:hover {
+  color: #E63946;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 992px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .primary-btn {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .navbar {
+    padding: 18px 5%;
+  }
+
+  .logo h2 {
+    font-size: 22px;
+  }
+
+  .logo svg {
+    font-size: 26px;
+  }
+
+}
