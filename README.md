@@ -1,5 +1,5 @@
 # 🏋️ Premium Gym Website
-
+ 
 A modern, premium, and fully responsive gym & fitness landing page built with **React**, **Vite**, and **Tailwind CSS**. This project was designed with a strong focus on performance, clean UI/UX, smooth animations, and reusable component architecture, making it suitable for fitness brands, gyms, personal trainers, and health clubs.
 
 ---
